@@ -2,7 +2,7 @@
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
 #+REVEAL_REVEAL_JS_VERSION: 4
 #+REVEAL_PLUGINS: (notes highlight zoom)
-#+REVEAL_THEME: simple
+#+REVEAL_THEME: white
 #+REVEAL_TRANS: linear
 :END:
 #+OPTIONS: toc:nil num:nil timestamp:nil author:nil
@@ -11,41 +11,64 @@
 * What's a static site?
 + No backend processing
 + No database involved
-+ Everyone is served the same HTML
++ Visitors are served the same HTML file from a server
 
 * Static Site Generators
 + https://jamstack.org/generators/
-+ Automates the creation of static websites
++ Automates the creation of static websites by processing markup files
++ The end results are minified HTML, CSS & JavaScript files to be served
 
 * Use Cases
-** Portfolio Websites
-#+BEGIN_QUOTE
-If you want a website to showcase your work but you can't frontend
-#+END_QUOTE
-*** Hugo
-#+BEGIN_EXPORT html
-<img src="https://gohugo.io/images/hugo-logo-wide.svg" alt="" />
-#+END_EXPORT
-** Documentation
-#+BEGIN_QUOTE
-Easily search through docs
-#+END_QUOTE
-** Blog Sites
-#+BEGIN_QUOTE
-Focus on content, not on code
-#+END_QUOTE
-
+Following are examples of what you can make with static site generators
+- Portfolio Websites
+- Documentation
+- Blog Sites
+- Landing Pages
 * Host your own static website!
 + Use GitHub pages to share your creation to the world
++ Pre-requisites:
+  + Github account
+  + Maybe node (depending on the theme of your choice)
+  + Git installed on your machine
+  + How to use a terminal
 ** Hugo
-We'll use Hugo for this workshop
-*** MacOS/Linux
+We'll use Hugo for this workshop.
 
+The commands listed will be done in the terminal.
+*** MacOS/Linux
+*MacOS*
+#+begin_src bash
+brew install hugo
+#+end_src
+*Linux*
+#+begin_src bash
+Figure it out yourself nerd 🤓
+#+end_src
 *** Windows 🤮
 You'll have to follow this guide
 + https://compile.blog/windows/hugo-on-windows-11/
 Brownie points if you use a package manager
+*** Creating Hugo project directory
+#+begin_src bash
+hugo new site <name of your website>
+cd <name of your website>
+git init
+#+end_src
 *** Themes
+Choose from a library of user themes
 + https://themes.gohugo.io/
+  #+begin_export html
+  <img src="https://themes.gohugo.io/themes/typo/tn-featured_hu3395826de52bcb0348ba7bdabba525f5_598286_768x512_fill_catmullrom_top_3.png" alt="" width="400"/>
+  #+end_export
+
+  I recommend [[https://github.com/Junyi-99/hugo-theme-anubis2][Anubis2]]
+*** To add a theme:
+  1. Copy the repository URL of the theme you want to use
+  2. git submodule add <URL>
+  3. Edit ~hugo.toml~ to add ~theme = <name of theme>~
+*** Locally serve
+#+begin_src bash
+hugo server -D
+#+end_src
 *** Hosting
 + https://gohugo.io/hosting-and-deployment/hosting-on-github/

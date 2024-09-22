@@ -9,7 +9,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/simple.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/zenburn.css"/>
 </head>
 <body>
@@ -19,81 +19,89 @@
 <h1 class="title">Static Site Generators</h1>
 </section>
 <section>
-<section id="slide-org2e6639b">
-<h2 id="org2e6639b">What&rsquo;s a static site?</h2>
+<section id="slide-orge7ba766">
+<h2 id="orge7ba766">What&rsquo;s a static site?</h2>
 <ul>
 <li>No backend processing</li>
 <li>No database involved</li>
-<li>Everyone is served the same HTML</li>
+<li>Visitors are served the same HTML file from a server</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgb5cc65d">
-<h2 id="orgb5cc65d">Static Site Generators</h2>
+<section id="slide-org51b0358">
+<h2 id="org51b0358">Static Site Generators</h2>
 <ul>
 <li><a href="https://jamstack.org/generators/">https://jamstack.org/generators/</a></li>
-<li>Automates the creation of static websites</li>
+<li>Automates the creation of static websites by processing markup files</li>
+<li>The end results are minified HTML, CSS &amp; JavaScript files to be served</li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-orgde8eb72">
-<h2 id="orgde8eb72">Use Cases</h2>
-<div class="outline-text-2" id="text-orgde8eb72">
-</div>
-</section>
-<section id="slide-org234f36c">
-<h3 id="org234f36c">Portfolio Websites</h3>
-<blockquote>
+<section id="slide-org01f8fdb">
+<h2 id="org01f8fdb">Use Cases</h2>
 <p>
-If you want a website to showcase your work but you can&rsquo;t frontend
+Following are examples of what you can make with static site generators
 </p>
-</blockquote>
-</section>
-<section id="slide-orgb989d35">
-<h4 id="orgb989d35">Hugo</h4>
-<img src="https://gohugo.io/images/hugo-logo-wide.svg" alt="" />
-</section>
-<section id="slide-org47e4f25">
-<h3 id="org47e4f25">Documentation</h3>
-<blockquote>
-<p>
-Easily search through docs
-</p>
-</blockquote>
-</section>
-<section id="slide-org7b73250">
-<h3 id="org7b73250">Blog Sites</h3>
-<blockquote>
-<p>
-Focus on content, not on code
-</p>
-</blockquote>
+<ul>
+<li>Portfolio Websites</li>
+<li>Documentation</li>
+<li>Blog Sites</li>
+<li>Landing Pages</li>
+
+</ul>
 </section>
 </section>
 <section>
-<section id="slide-orga4818eb">
-<h2 id="orga4818eb">Host your own static website!</h2>
+<section id="slide-orgd544aca">
+<h2 id="orgd544aca">Host your own static website!</h2>
 <ul>
 <li>Use GitHub pages to share your creation to the world</li>
+<li>Pre-requisites:
+<ul>
+<li>Github account</li>
+<li>Maybe node (depending on the theme of your choice)</li>
+<li>Git installed on your machine</li>
+<li>How to use a terminal</li>
+
+</ul></li>
 
 </ul>
 </section>
-<section id="slide-orgad468aa">
-<h3 id="orgad468aa">Hugo</h3>
+<section id="slide-orgfaa9f1a">
+<h3 id="orgfaa9f1a">Hugo</h3>
 <p>
-We&rsquo;ll use Hugo for this workshop
+We&rsquo;ll use Hugo for this workshop.
+</p>
+
+<p>
+The commands listed will be done in the terminal.
 </p>
 </section>
-<section id="slide-org34dc028">
-<h4 id="org34dc028">MacOS/Linux</h4>
+<section id="slide-orgb5e54e7">
+<h4 id="orgb5e54e7">MacOS/Linux</h4>
+<p>
+<b>MacOS</b>
+</p>
+<div class="org-src-container">
 
+<pre><code class="bash" >brew install hugo
+</code></pre>
+</div>
+<p>
+<b>Linux</b>
+</p>
+<div class="org-src-container">
+
+<pre><code class="bash" >Figure it out yourself nerd 🤓
+</code></pre>
+</div>
 </section>
-<section id="slide-org604fc6f">
-<h4 id="org604fc6f">Windows 🤮</h4>
+<section id="slide-org1851656">
+<h4 id="org1851656">Windows 🤮</h4>
 <p>
 You&rsquo;ll have to follow this guide
 </p>
@@ -105,15 +113,52 @@ You&rsquo;ll have to follow this guide
 Brownie points if you use a package manager
 </p>
 </section>
-<section id="slide-org001be8c">
-<h4 id="org001be8c">Themes</h4>
+<section id="slide-orgc916a1a">
+<h4 id="orgc916a1a">Creating Hugo project directory</h4>
+<div class="org-src-container">
+
+<pre><code class="bash" >hugo new site &lt;name of your website&gt;
+cd &lt;name of your website&gt;
+git init
+</code></pre>
+</div>
+</section>
+<section id="slide-orgb9a42e5">
+<h4 id="orgb9a42e5">Themes</h4>
+<p>
+Choose from a library of user themes
+</p>
 <ul>
-<li><a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+<li><p>
+<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>
+</p>
+<img src="https://themes.gohugo.io/themes/typo/tn-featured_hu3395826de52bcb0348ba7bdabba525f5_598286_768x512_fill_catmullrom_top_3.png" alt="" width="400"/>
+
+<p>
+I recommend <a href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>
+</p></li>
 
 </ul>
 </section>
-<section id="slide-orgae1ab09">
-<h4 id="orgae1ab09">Hosting</h4>
+<section id="slide-org4841b05">
+<h4 id="org4841b05">To add a theme:</h4>
+<ol>
+<li>Copy the repository URL of the theme you want to use</li>
+<li>git submodule add &lt;URL&gt;</li>
+<li>Edit <code>hugo.toml</code> to add <code>theme = &lt;name of theme&gt;</code></li>
+
+</ol>
+</section>
+<section id="slide-org5726901">
+<h4 id="org5726901">Locally serve</h4>
+<div class="org-src-container">
+
+<pre><code class="bash" >hugo server -D
+</code></pre>
+</div>
+</section>
+<section id="slide-org1855e3f">
+<h4 id="org1855e3f">Hosting</h4>
 <ul>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
 
