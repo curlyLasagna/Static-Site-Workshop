@@ -16,23 +16,25 @@
 * Static Site Generators
 + https://jamstack.org/generators/
 + Automates the creation of static websites by processing markup files
-+ The end results are minified HTML, CSS & JavaScript files to be served
++ The end results are minified HTML, CSS & JavaScript files that a server serves
 
 * Use Cases
 Following are examples of what you can make with static site generators
-- Portfolio Websites
-- Documentation
-- Blog Sites
-- Landing Pages
+- [[https://samrobbins.uk/][Portfolio Websites]]
+- [[https://curlylasagna.github.io/OTS-Student-Documentation/][Documentation]]
+- [[https://mayadevbe.me/posts/][ Blog Sites ]]
+- [[https://hugo-product-launch.netlify.app/][Landing Pages]]
 * Host your own static website!
 + Use GitHub pages to share your creation to the world
 + Pre-requisites:
   + Github account
-  + Maybe node (depending on the theme of your choice)
-  + Git installed on your machine
+  + Node? (depending on the theme of your choice)
+  + Text editor
+  + Git
   + How to use a terminal
 ** Hugo
-We'll use Hugo for this workshop.
+We'll use Hugo as our static site generator for this workshop.
+Feel free to use other static site generators.
 
 The commands listed will be done in the terminal.
 *** MacOS/Linux
@@ -64,8 +66,9 @@ Choose from a library of user themes
   I recommend [[https://github.com/Junyi-99/hugo-theme-anubis2][Anubis2]]
 *** To add a theme:
   1. Copy the repository URL of the theme you want to use
-  2. git submodule add <URL>
-  3. Edit ~hugo.toml~ to add ~theme = <name of theme>~
+  2. ~cd themes~
+  3. ~git submodule add <URL>~
+  4. Edit ~hugo.toml~ and add ~theme = <name of theme>~
 *** Locally serve
 #+begin_src bash
 hugo server -D
